@@ -18,7 +18,7 @@ W = tf.Variable(tf.random_uniform([1, 2], -1.0, 1.0))
 # tf.matmul矩阵乘法 [1行,2列] * [2行,100列] = [1行,100列]
 y = tf.matmul(W, x_data) + b
 
-# 计算损失loss，tf.reduce_mean取所有数据的平均值，tf.square开平方
+# 计算损失loss，tf.reduce_mean取所有数据的平均值，tf.square平方
 loss = tf.reduce_mean(tf.square(y - y_data))
 # 梯度下降算法，梯度下降值范围(0,1)，可以更换其他值测试
 optimizer = tf.train.GradientDescentOptimizer(0.5)
