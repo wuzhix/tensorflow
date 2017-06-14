@@ -1,5 +1,5 @@
 # tensorflow
-python是用tensorflow库进行机器学习
+python使用tensorflow库进行机器学习
 
 ## Demo
 > * [计数器](/src/examples/counter.py)
