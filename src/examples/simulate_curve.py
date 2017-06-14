@@ -39,7 +39,7 @@ l1 = add_layer(xs, 1, 10, activatuib_funaction=tf.nn.relu)
 predition = add_layer(l1, 10, 1, activatuib_funaction=None)
 
 # tf.reduce_mean取所有数据的平均值 tf.square平方
-loss = tf.reduce_mean(tf.reduce_sum(tf.square(ys-predition), reduction_indices=[1]))
+loss = tf.reduce_mean(tf.reduce_sum(tf.square(ys-predition), reduction_indices=1))
 # GradientDescentOptimizer梯度下降算法 minimize添加操作节点，用于最小化loss，并更新var_list
 train_step = tf.train.GradientDescentOptimizer(0.1).minimize(loss)
 
@@ -50,7 +50,7 @@ with tf.Session() as sess:
     fig = plt.figure()
     # add_subplot将画布分割成1行1列，图像画在从左到右从上到下的第1块
     ax = fig.add_subplot(1, 1, 1)
-    # scatter绘制散点
+    # scatter绘制成散点图
     ax.scatter(x_data, y_data)
     # 显示figure
     plt.show(block=False)
@@ -66,7 +66,7 @@ with tf.Session() as sess:
                 pass
             print(train, sess.run(loss, feed_dict={xs: x_data, ys: y_data}))
             predition_value = sess.run(predition, feed_dict={xs: x_data})
-            # plot绘制属性
+            # plot绘制图形
             lines = ax.plot(x_data, predition_value, 'r-', lw=5)
             # pause暂停0.1s
             plt.pause(0.1)
