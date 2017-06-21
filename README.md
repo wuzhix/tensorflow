@@ -7,6 +7,7 @@ python使用tensorflow库进行机器学习
 > * [拟合曲线](/src/examples/simulate_curve.py)
 > * [保存数据](/src/examples/save.py)
 > * [提取数据](/src/examples/restore.py)
+> * [手写识别](/src/examples/mnist.py)
 
 ## API说明
 > * [softmax函数](/src/instruction/softmax.py)
